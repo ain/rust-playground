@@ -3,6 +3,7 @@ mod collections;
 mod stringformatter;
 mod datastructures;
 mod functions;
+mod traits;
 
 fn main() {
 
@@ -16,4 +17,6 @@ fn main() {
     stringformatter::formatted_string();
 
     functions::odd_even_letters();
+
+    traits::fishtank();
 }
