@@ -14,7 +14,8 @@ trait Fish {
 
 struct Herring {
     name: &'static str,
-    predator: bool
+    predator: bool,
+    location: &'static str
 }
 
 struct Salmon {
@@ -24,7 +25,7 @@ struct Salmon {
 
 impl Fish for Herring {
     fn create(name: &'static str, predator: bool) -> Herring {
-        Herring{ name: name, predator: predator }
+        Herring{ name: name, predator: predator, location: "North Atlantic" }
     }
 
     fn name(&self) -> &'static str {
@@ -53,6 +54,7 @@ impl Fish for Salmon {
 pub fn fishtank() {
     let herring:Herring = Fish::create("Humble Herring", false);
     herring.eat(); // Humble Herring had a vegan meal
+    println!("{} was in {}", herring.name(), herring.location); // Humble Herring was in North Atlantic
 
     let salmon:Salmon = Fish::create("Shallow Salmon", true);
     salmon.eat(); // Shallow Salmon had a pescetarian meal
