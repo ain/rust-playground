@@ -1,5 +1,5 @@
 pub fn typed_matrix() {
-    let mtx:[[i32;3];2] = [
+    let mtx: [[i32;3];2] = [
         [123, 3, 43],
         [2, 32, 102]
     ];

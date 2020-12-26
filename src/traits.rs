@@ -53,11 +53,11 @@ impl Fish for Salmon {
 
 pub fn fishtank() {
     let herrings_name: &'static str = "Humble Herring";
-    let herring:Herring = Fish::create(herrings_name, false);
+    let herring: Herring = Fish::create(herrings_name, false);
     herring.eat(); // Humble Herring had a vegan meal
     println!("{} was in {}", herring.name(), herring.location); // Humble Herring was in North Atlantic
 
     let salmons_name: String = String::from("Shallow Salmon");
-    let salmon:Salmon = Fish::create(salmons_name, true);
+    let salmon: Salmon = Fish::create(salmons_name, true);
     salmon.eat(); // Shallow Salmon had a pescetarian meal
 }
