@@ -1,7 +1,7 @@
 trait Fish {
-    fn create(name: &'static str, predator: bool) -> Self;
+    fn create<S: Into<String>>(name: S, predator: bool) -> Self;
 
-    fn name(&self) -> &'static str;
+    fn name(&self) -> &String;
 
     fn predator(&self) -> bool;
 
@@ -13,23 +13,23 @@ trait Fish {
 }
 
 struct Herring {
-    name: &'static str,
+    name: String,
     predator: bool,
     location: &'static str
 }
 
 struct Salmon {
-    name: &'static str,
+    name: String,
     predator: bool
 }
 
 impl Fish for Herring {
-    fn create(name: &'static str, predator: bool) -> Herring {
-        Herring{ name: name, predator: predator, location: "North Atlantic" }
+    fn create<S: Into<String>>(name: S, predator: bool) -> Herring {
+        Herring{ name: name.into(), predator: predator, location: "North Atlantic" }
     }
 
-    fn name(&self) -> &'static str {
-        self.name
+    fn name(&self) -> &String {
+        &self.name
     }
 
     fn predator(&self) -> bool {
@@ -38,12 +38,12 @@ impl Fish for Herring {
 }
 
 impl Fish for Salmon {
-    fn create(name: &'static str, predator: bool) -> Salmon {
-        Salmon{ name: name, predator: predator }
+    fn create<S: Into<String>>(name: S, predator: bool) -> Salmon {
+        Salmon{ name: name.into(), predator: predator }
     }
 
-    fn name(&self) -> &'static str {
-        self.name
+    fn name(&self) -> &String {
+        &self.name
     }
 
     fn predator(&self) -> bool {
@@ -52,10 +52,12 @@ impl Fish for Salmon {
 }
 
 pub fn fishtank() {
-    let herring:Herring = Fish::create("Humble Herring", false);
+    let herrings_name: &'static str = "Humble Herring";
+    let herring:Herring = Fish::create(herrings_name, false);
     herring.eat(); // Humble Herring had a vegan meal
     println!("{} was in {}", herring.name(), herring.location); // Humble Herring was in North Atlantic
 
-    let salmon:Salmon = Fish::create("Shallow Salmon", true);
+    let salmons_name: String = String::from("Shallow Salmon");
+    let salmon:Salmon = Fish::create(salmons_name, true);
     salmon.eat(); // Shallow Salmon had a pescetarian meal
 }
