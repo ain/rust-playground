@@ -37,6 +37,12 @@ impl Fish for Herring {
     }
 }
 
+impl Drop for Herring {
+    fn drop(&mut self) {
+        println!("{} died", self.name());
+    }
+}
+
 impl Fish for Salmon {
     fn create<S: Into<String>>(name: S, predator: bool) -> Salmon {
         Salmon{ name: name.into(), predator: predator }
@@ -60,4 +66,6 @@ pub fn fishtank() {
     let salmons_name: String = String::from("Shallow Salmon");
     let salmon: Salmon = Fish::create(salmons_name, true);
     salmon.eat(); // Shallow Salmon had a pescetarian meal
+
+    println!("Fishtank lives");
 }
