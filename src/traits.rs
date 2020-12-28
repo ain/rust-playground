@@ -1,5 +1,5 @@
 trait Fish {
-    fn create<S: Into<String>>(name: S, predator: bool) -> Self;
+    fn create<S: Into<String>>(name: S, predator: bool) -> Self where Self: Sized;
 
     fn name(&self) -> &String;
 
@@ -68,4 +68,11 @@ pub fn fishtank() {
     salmon.eat(); // Shallow Salmon had a pescetarian meal
 
     println!("Fishtank lives");
+
+    let mut fishtank_register: Vec<Box<dyn Fish>> = Vec::new();
+    fishtank_register.push(Box::new(herring));
+    fishtank_register.push(Box::new(salmon));
+    for fish in fishtank_register {
+        println!("{} found in register", fish.name());
+    }
 }
