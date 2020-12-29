@@ -4,6 +4,7 @@ mod stringformatter;
 mod datastructures;
 mod functions;
 mod traits;
+mod memory_ownership;
 
 fn main() {
 
@@ -19,4 +20,6 @@ fn main() {
     functions::odd_even_letters();
 
     traits::fishtank();
+
+    memory_ownership::primitive_ownership();
 }
