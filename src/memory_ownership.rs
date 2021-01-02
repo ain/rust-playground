@@ -5,5 +5,5 @@ pub fn primitive_ownership() {
 
     let ione = 1;
     let itwo = ione;
-    println!("{:?}", ione);
+    println!("Primitive reference to 'ione' variable succeeds for following debug print: {:?}", ione);
 }
