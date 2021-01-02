@@ -8,8 +8,10 @@ pub fn primitive_ownership() {
     println!("Primitive reference to 'ione' variable succeeds for following debug print: {:?}", ione);
 
     let mut vec2 = vec!["this", "can", "be", "iterated", "but", "not", "pushed"];
-    for i in vec2 {
+    for i in &vec2 {
         println!("i in vec2 is {}", i);
-        //&vec2.push("sure?"); // fails compiler
+        vec2.push("sure?"); // fails compiler
     }
+    vec2.push("during");
+    vec2.push("iteration");
 }
