@@ -5,6 +5,7 @@ mod datastructures;
 mod functions;
 mod traits;
 mod memory_ownership;
+mod lifetime;
 
 fn main() {
 
@@ -22,4 +23,6 @@ fn main() {
     traits::fishtank();
 
     memory_ownership::primitive_ownership();
+
+    lifetime::ocean();
 }
