@@ -6,6 +6,7 @@ mod functions;
 mod traits;
 mod memory_ownership;
 mod lifetime;
+mod reference_counter;
 
 fn main() {
 
@@ -25,4 +26,6 @@ fn main() {
     memory_ownership::primitive_ownership();
 
     lifetime::ocean();
+
+    reference_counter::strong_pointers();
 }
