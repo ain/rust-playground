@@ -10,22 +10,22 @@ mod reference_counter;
 
 fn main() {
 
-    controlflow::status_match();
+    //controlflow::status_match();
 
-    datastructures::typed_matrix();
-    datastructures::tuple_destruct();
+    //datastructures::typed_matrix();
+    //datastructures::tuple_destruct();
 
-    collections::hashset_subset();
+    //collections::hashset_subset();
 
-    stringformatter::formatted_string();
+    //stringformatter::formatted_string();
 
-    functions::odd_even_letters();
+    //functions::odd_even_letters();
 
-    traits::fishtank();
+    //traits::fishtank();
 
-    memory_ownership::primitive_ownership();
+    //memory_ownership::primitive_ownership();
 
-    lifetime::ocean();
+    //lifetime::ocean();
 
-    reference_counter::strong_pointers();
+    reference_counter::strong_refs();
 }
