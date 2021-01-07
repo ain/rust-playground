@@ -1,45 +1,53 @@
-use std::rc::Rc;
-use std::cell::RefCell;
-
 struct Sea {
-    name: String,
-    fish: Vec<Rc<RefCell<Fish>>>
+    name: String
 }
 
 impl Sea {
-    fn new(name: &str) -> Sea {
-        Sea {
-            name: name.into(),
-            fish: Vec::new()
-        }
-    }
-
-    fn add_fish(fish: Rc<RefCell<Fish>>, sea: Rc<RefCell<Sea>>) {
-        fish.borrow_mut().seas.push(sea.clone());
-        sea.borrow_mut().fish.push(fish);
+    fn fish(&self, ecosystem: Ecosystem) -> Vec<String> {
+        ecosystem.habitats.iter()
+            .filter(|&h| h.sea.name == self.name)
+            .map(|h| h.fish.name.clone())
+            .collect()
     }
 }
 
 struct Fish {
-    name: String,
-    seas: Vec<Rc<RefCell<Sea>>>
+    name: String
 }
 
-impl Fish {
-    fn new(name: &str) -> Fish {
-        Fish {
-            name: name.into(),
-            seas: Vec::new()
-        }
+struct Habitat<'a> {
+    fish: &'a Fish,
+    sea: &'a Sea
+}
+
+impl<'a> Habitat<'a> {
+    fn new(fish: &'a Fish, sea: &'a Sea) -> Habitat<'a> {
+        Habitat { fish, sea }
+    }
+}
+
+struct Ecosystem<'a> {
+    habitats: Vec<Habitat<'a>>
+}
+
+impl<'a> Ecosystem<'a> {
+    fn new() -> Ecosystem<'a> {
+        Ecosystem { habitats: Vec::new() }
+    }
+
+    fn inhabit(&mut self, fish: &'a Fish, sea: &'a Sea) {
+        self.habitats.push(Habitat::new(fish, sea));
     }
 }
 
 pub fn circ_refs() {
-    let herring = Rc::new(RefCell::new(Fish::new("Hopeful Herring")));
-    let baltic_sea = Rc::new(RefCell::new(Sea::new("Baltic Sea")));
+    let herring = Fish { name: "Humble Herring".into() };
+    let sea = Sea { name: "Baltic Sea".into() };
 
-    Sea::add_fish(herring, baltic_sea.clone());
+    let mut ecosystem = Ecosystem::new();
+    ecosystem.inhabit(&herring, &sea);
 
-    let sprat = Rc::new(RefCell::new(Fish::new("Sporty Sprat")));
-    Sea::add_fish(sprat, baltic_sea);
+    for f in sea.fish(ecosystem) {
+        println!("Baltic Sea inhabited by {}", f);
+    }
 }
