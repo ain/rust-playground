@@ -38,5 +38,8 @@ pub fn circ_refs() {
     let herring = Rc::new(RefCell::new(Fish::new("Hopeful Herring")));
     let baltic_sea = Rc::new(RefCell::new(Sea::new("Baltic Sea")));
 
-    Sea::add_fish(herring, baltic_sea);
+    Sea::add_fish(herring, baltic_sea.clone());
+
+    let sprat = Rc::new(RefCell::new(Fish::new("Sporty Sprat")));
+    Sea::add_fish(sprat, baltic_sea);
 }
