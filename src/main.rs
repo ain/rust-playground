@@ -7,6 +7,7 @@ mod traits;
 mod memory_ownership;
 mod lifetime;
 mod reference_counter;
+mod mutex;
 
 fn main() {
 
@@ -27,5 +28,6 @@ fn main() {
 
     //lifetime::ocean();
 
-    reference_counter::strong_refs();
+    //reference_counter::strong_refs();
+    mutex::refs_across_threads();
 }
