@@ -8,6 +8,7 @@ mod memory_ownership;
 mod lifetime;
 mod reference_counter;
 mod mutex;
+mod circular_references;
 
 fn main() {
 
@@ -29,5 +30,6 @@ fn main() {
     //lifetime::ocean();
 
     //reference_counter::strong_refs();
-    mutex::refs_across_threads();
+    //mutex::refs_across_threads();
+    circular_references::circ_refs();
 }
