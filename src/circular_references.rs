@@ -42,12 +42,14 @@ impl<'a> Ecosystem<'a> {
 
 pub fn circ_refs() {
     let herring = Fish { name: "Humble Herring".into() };
+    let sprat = Fish { name: "Sober Sprat".into() };
     let sea = Sea { name: "Baltic Sea".into() };
 
     let mut ecosystem = Ecosystem::new();
     ecosystem.inhabit(&herring, &sea);
+    ecosystem.inhabit(&sprat, &sea);
 
     for f in sea.fish(ecosystem) {
-        println!("Baltic Sea inhabited by {}", f);
+        println!("{} inhabited by {}", sea.name, f);
     }
 }
