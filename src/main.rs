@@ -9,6 +9,7 @@ mod lifetime;
 mod reference_counter;
 mod mutex;
 mod circular_references;
+mod concurrency;
 
 fn main() {
 
@@ -31,5 +32,7 @@ fn main() {
 
     //reference_counter::strong_refs();
     //mutex::refs_across_threads();
-    circular_references::circ_refs();
+    //circular_references::circ_refs();
+
+    concurrency::spawner();
 }
