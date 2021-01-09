@@ -8,14 +8,21 @@ pub fn spawner() {
     let salmon = thread::spawn(|| {
         for _ in 1..5 {
             print!(" Salmon");
-            thread::sleep(time::Duration::from_millis(50));
+            thread::sleep(time::Duration::from_millis(20));
         }
     });
 
     let pike = thread::spawn(|| {
         for _ in 1..5 {
             print!(" Pike");
-            thread::sleep(time::Duration::from_millis(50));
+            thread::sleep(time::Duration::from_millis(30));
+        }
+    });
+
+    let zander = thread::spawn(|| {
+        for _ in 1..5 {
+            print!(" Zander");
+            thread::sleep(time::Duration::from_millis(500));
         }
     });
 
@@ -24,6 +31,7 @@ pub fn spawner() {
         thread::sleep(time::Duration::from_millis(50));
     }
 
+    //zander.join(); // Do not wait for all of zander
     salmon.join();
     pike.join();
 }
