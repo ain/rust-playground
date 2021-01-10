@@ -10,6 +10,7 @@ mod reference_counter;
 mod mutex;
 mod circular_references;
 mod concurrency;
+mod external_dependencies;
 
 fn main() {
 
@@ -34,5 +35,7 @@ fn main() {
     //mutex::refs_across_threads();
     //circular_references::circ_refs();
 
-    concurrency::spawner();
+    //concurrency::spawner();
+
+    external_dependencies::random_boolean();
 }
