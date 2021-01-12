@@ -9,12 +9,13 @@ extern crate external_dependencies;
 extern crate functions;
 extern crate lifetime;
 extern crate memory_ownership;
+extern crate stringformatter;
 
 use mutex::refs_across_threads;
 
 use controlflow::status_match;
 use collections::hashset_subset;
-mod stringformatter;
+use stringformatter::formatted_string;
 use datastructures::typed_matrix;
 use datastructures::tuple_destruct;
 use functions::odd_even_letters;
@@ -35,7 +36,7 @@ fn main() {
 
     hashset_subset();
 
-    //stringformatter::formatted_string();
+    formatted_string();
 
     odd_even_letters();
 
