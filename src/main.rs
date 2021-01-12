@@ -5,6 +5,7 @@ extern crate collections;
 extern crate concurrency;
 extern crate controlflow;
 extern crate datastructures;
+extern crate external_dependencies;
 
 use mutex::refs_across_threads;
 
@@ -20,7 +21,7 @@ mod lifetime;
 use reference_counter::strong_refs;
 use circular_references::circ_refs;
 use concurrency::spawner;
-mod external_dependencies;
+use external_dependencies::random_boolean;
 
 fn main() {
 
@@ -47,5 +48,5 @@ fn main() {
 
     //concurrency::spawner();
 
-    //external_dependencies::random_boolean();
+    random_boolean();
 }

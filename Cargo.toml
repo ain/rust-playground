@@ -7,7 +7,6 @@ edition = "2018"
 [workspace]
 
 [dependencies]
-rand = "0.8.1"
 mutex = { path = "mutex" }
 reference_counter = { path = "reference_counter" }
 circular_references = { path = "circular_references" }
@@ -15,3 +14,4 @@ collections = { path = "collections" }
 concurrency = { path = "concurrency" }
 controlflow = { path = "controlflow" }
 datastructures = { path = "datastructures" }
+external_dependencies = { path = "external_dependencies" }
