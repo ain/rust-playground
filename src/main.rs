@@ -1,18 +1,22 @@
 extern crate mutex;
+extern crate reference_counter;
+extern crate circular_references;
+extern crate collections;
+extern crate concurrency;
 
 use mutex::refs_across_threads;
 
 mod controlflow;
-mod collections;
+use collections::hashset_subset;
 mod stringformatter;
 mod datastructures;
 mod functions;
 mod traits;
 mod memory_ownership;
 mod lifetime;
-mod reference_counter;
-mod circular_references;
-mod concurrency;
+use reference_counter::strong_refs;
+use circular_references::circ_refs;
+use concurrency::spawner;
 mod external_dependencies;
 
 fn main() {
@@ -22,7 +26,7 @@ fn main() {
     //datastructures::typed_matrix();
     //datastructures::tuple_destruct();
 
-    //collections::hashset_subset();
+    hashset_subset();
 
     //stringformatter::formatted_string();
 
@@ -34,9 +38,9 @@ fn main() {
 
     //lifetime::ocean();
 
-    //reference_counter::strong_refs();
+    strong_refs();
     refs_across_threads();
-    //circular_references::circ_refs();
+    circ_refs();
 
     //concurrency::spawner();
 

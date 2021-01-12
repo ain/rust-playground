@@ -4,15 +4,12 @@ version = "0.1.0"
 authors = ["Ain Tohvri <ain@flashbit.net>"]
 edition = "2018"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[lib]
-name = "mutex"
-path = "src/lib/mutex.rs"
-
-[[bin]]
-name = "main"
-path = "src/main.rs"
+[workspace]
 
 [dependencies]
 rand = "0.8.1"
+mutex = { path = "mutex" }
+reference_counter = { path = "reference_counter" }
+circular_references = { path = "circular_references" }
+collections = { path = "collections" }
+concurrency = { path = "concurrency" }
