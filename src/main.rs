@@ -6,6 +6,7 @@ extern crate concurrency;
 extern crate controlflow;
 extern crate datastructures;
 extern crate external_dependencies;
+extern crate functions;
 
 use mutex::refs_across_threads;
 
@@ -14,7 +15,7 @@ use collections::hashset_subset;
 mod stringformatter;
 use datastructures::typed_matrix;
 use datastructures::tuple_destruct;
-mod functions;
+use functions::odd_even_letters;
 mod traits;
 mod memory_ownership;
 mod lifetime;
@@ -34,7 +35,7 @@ fn main() {
 
     //stringformatter::formatted_string();
 
-    //functions::odd_even_letters();
+    odd_even_letters();
 
     //traits::fishtank();
 
