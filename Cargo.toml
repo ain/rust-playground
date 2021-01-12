@@ -14,3 +14,4 @@ circular_references = { path = "circular_references" }
 collections = { path = "collections" }
 concurrency = { path = "concurrency" }
 controlflow = { path = "controlflow" }
+datastructures = { path = "datastructures" }

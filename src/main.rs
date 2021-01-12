@@ -4,13 +4,15 @@ extern crate circular_references;
 extern crate collections;
 extern crate concurrency;
 extern crate controlflow;
+extern crate datastructures;
 
 use mutex::refs_across_threads;
 
 use controlflow::status_match;
 use collections::hashset_subset;
 mod stringformatter;
-mod datastructures;
+use datastructures::typed_matrix;
+use datastructures::tuple_destruct;
 mod functions;
 mod traits;
 mod memory_ownership;
@@ -24,8 +26,8 @@ fn main() {
 
     status_match();
 
-    //datastructures::typed_matrix();
-    //datastructures::tuple_destruct();
+    typed_matrix();
+    tuple_destruct();
 
     hashset_subset();
 
