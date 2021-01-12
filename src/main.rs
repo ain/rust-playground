@@ -1,18 +1,3 @@
-extern crate mutex;
-extern crate reference_counter;
-extern crate circular_references;
-extern crate collections;
-extern crate concurrency;
-extern crate controlflow;
-extern crate datastructures;
-extern crate external_dependencies;
-extern crate functions;
-extern crate lifetime;
-extern crate memory_ownership;
-extern crate stringformatter;
-extern crate traits;
-
-
 use controlflow::status_match;
 use collections::hashset_subset;
 use stringformatter::formatted_string;
