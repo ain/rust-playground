@@ -7,6 +7,7 @@ extern crate controlflow;
 extern crate datastructures;
 extern crate external_dependencies;
 extern crate functions;
+extern crate lifetime;
 
 use mutex::refs_across_threads;
 
@@ -18,7 +19,7 @@ use datastructures::tuple_destruct;
 use functions::odd_even_letters;
 mod traits;
 mod memory_ownership;
-mod lifetime;
+use lifetime::ocean;
 use reference_counter::strong_refs;
 use circular_references::circ_refs;
 use concurrency::spawner;
@@ -41,7 +42,7 @@ fn main() {
 
     //memory_ownership::primitive_ownership();
 
-    //lifetime::ocean();
+    ocean();
 
     strong_refs();
     refs_across_threads();
