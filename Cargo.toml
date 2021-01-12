@@ -13,3 +13,4 @@ reference_counter = { path = "reference_counter" }
 circular_references = { path = "circular_references" }
 collections = { path = "collections" }
 concurrency = { path = "concurrency" }
+controlflow = { path = "controlflow" }

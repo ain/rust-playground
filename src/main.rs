@@ -3,10 +3,11 @@ extern crate reference_counter;
 extern crate circular_references;
 extern crate collections;
 extern crate concurrency;
+extern crate controlflow;
 
 use mutex::refs_across_threads;
 
-mod controlflow;
+use controlflow::status_match;
 use collections::hashset_subset;
 mod stringformatter;
 mod datastructures;
@@ -21,7 +22,7 @@ mod external_dependencies;
 
 fn main() {
 
-    //controlflow::status_match();
+    status_match();
 
     //datastructures::typed_matrix();
     //datastructures::tuple_destruct();
