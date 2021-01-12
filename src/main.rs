@@ -12,7 +12,6 @@ extern crate memory_ownership;
 extern crate stringformatter;
 extern crate traits;
 
-use mutex::refs_across_threads;
 
 use controlflow::status_match;
 use collections::hashset_subset;
@@ -24,6 +23,7 @@ use traits::fishtank;
 use memory_ownership::primitive_ownership;
 use lifetime::ocean;
 use reference_counter::strong_refs;
+use mutex::refs_across_threads;
 use circular_references::circ_refs;
 use concurrency::spawner;
 use external_dependencies::random_boolean;
@@ -41,7 +41,7 @@ fn main() {
 
     odd_even_letters();
 
-    //traits::fishtank();
+    fishtank();
 
     primitive_ownership();
 
@@ -51,7 +51,7 @@ fn main() {
     refs_across_threads();
     circ_refs();
 
-    //spawner();
+    spawner();
 
     random_boolean();
 }
