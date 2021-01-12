@@ -8,6 +8,7 @@ extern crate datastructures;
 extern crate external_dependencies;
 extern crate functions;
 extern crate lifetime;
+extern crate memory_ownership;
 
 use mutex::refs_across_threads;
 
@@ -18,7 +19,7 @@ use datastructures::typed_matrix;
 use datastructures::tuple_destruct;
 use functions::odd_even_letters;
 mod traits;
-mod memory_ownership;
+use memory_ownership::primitive_ownership;
 use lifetime::ocean;
 use reference_counter::strong_refs;
 use circular_references::circ_refs;
@@ -40,7 +41,7 @@ fn main() {
 
     //traits::fishtank();
 
-    //memory_ownership::primitive_ownership();
+    primitive_ownership();
 
     ocean();
 
