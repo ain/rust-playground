@@ -1,3 +1,7 @@
+extern crate mutex;
+
+use mutex::refs_across_threads;
+
 mod controlflow;
 mod collections;
 mod stringformatter;
@@ -7,7 +11,6 @@ mod traits;
 mod memory_ownership;
 mod lifetime;
 mod reference_counter;
-mod mutex;
 mod circular_references;
 mod concurrency;
 mod external_dependencies;
@@ -32,10 +35,10 @@ fn main() {
     //lifetime::ocean();
 
     //reference_counter::strong_refs();
-    //mutex::refs_across_threads();
+    refs_across_threads();
     //circular_references::circ_refs();
 
     //concurrency::spawner();
 
-    external_dependencies::random_boolean();
+    //external_dependencies::random_boolean();
 }
