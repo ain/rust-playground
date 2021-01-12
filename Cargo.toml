@@ -19,3 +19,4 @@ functions = { path = "functions" }
 lifetime = { path = "lifetime" }
 memory_ownership = { path = "memory_ownership" }
 stringformatter = { path = "stringformatter" }
+traits = { path = "traits" }

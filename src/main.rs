@@ -10,6 +10,7 @@ extern crate functions;
 extern crate lifetime;
 extern crate memory_ownership;
 extern crate stringformatter;
+extern crate traits;
 
 use mutex::refs_across_threads;
 
@@ -19,7 +20,7 @@ use stringformatter::formatted_string;
 use datastructures::typed_matrix;
 use datastructures::tuple_destruct;
 use functions::odd_even_letters;
-mod traits;
+use traits::fishtank;
 use memory_ownership::primitive_ownership;
 use lifetime::ocean;
 use reference_counter::strong_refs;
@@ -50,7 +51,7 @@ fn main() {
     refs_across_threads();
     circ_refs();
 
-    //concurrency::spawner();
+    //spawner();
 
     random_boolean();
 }
