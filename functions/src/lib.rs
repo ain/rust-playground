@@ -1,4 +1,4 @@
-fn ascii_alphabet() -> Vec<char> {
+pub fn ascii_alphabet() -> Vec<char> {
     let mut alphabet = Vec::new();
     let mut a = 'a' as u8;
     while a <= ('z' as u8) {
