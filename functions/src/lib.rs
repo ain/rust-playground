@@ -1,3 +1,15 @@
+//! This module prints letters of latin alphabet on 2 lines by even and odd positions in the
+//! alphabet.
+//!
+//! # Examples
+//!
+//! ```
+//! println!("Original alphabet letters: {:?}", ascii_alphabet());
+//! println!("Alphabet letters split by odd/even positions:");
+//! odd_even_letters();
+//! ```
+
+/// Returns latin alphabet
 pub fn ascii_alphabet() -> Vec<char> {
     let mut alphabet = Vec::new();
     let mut a = 'a' as u8;
@@ -8,6 +20,7 @@ pub fn ascii_alphabet() -> Vec<char> {
     alphabet
 }
 
+/// Prints odd and even letters on separate lines.
 pub fn odd_even_letters() {
     let alphabet = ascii_alphabet();
     let mut odd = Vec::new();
